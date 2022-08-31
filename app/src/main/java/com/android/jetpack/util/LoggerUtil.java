@@ -130,7 +130,7 @@ public class LoggerUtil {
             if (Environment.getExternalStorageState().equals(
                     Environment.MEDIA_MOUNTED)) {
                 path = Environment.getExternalStorageDirectory().getAbsolutePath()
-                        + "/MsbLog/";
+                        + "/jetpackLog/";
                 File file_Path = new File(path);
                 file_Path.mkdirs();
                 File file = new File(path, "log.txt");

@@ -1,4 +1,4 @@
-package com.android.jetpack
+package com.android.jetpack.observer
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner

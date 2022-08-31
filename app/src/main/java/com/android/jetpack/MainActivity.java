@@ -1,15 +1,15 @@
 package com.android.jetpack;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.android.jetpack.observer.MyObserver;
 
 /**
  * 注意：ViewModel 绝不能引用视图、Lifecycle 或可能存储对 Activity 上下文的引用的任何类。
@@ -27,10 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        testTimerViewModel();
-        testUserModel();
-
+//        testTimerViewModel();
+//        testUserModel();
 
         getLifecycle().addObserver(new MyObserver());
     }
