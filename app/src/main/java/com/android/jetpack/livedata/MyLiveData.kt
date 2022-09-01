@@ -10,7 +10,9 @@ import androidx.lifecycle.ViewModel
  * @author dev.liang <a href="mailto:dev.liang@outlook.com">Contact me.</a>
  * @since 2022/08/30 15:51
  */
-object MyLiveData  {
+object MyLiveData {
 
-    val data : MutableLiveData<String> by lazy { MutableLiveData() }
+    // 用到懒加载，用到再加载
+    val data: MutableLiveData<String> by lazy { MutableLiveData<String>() }
+    val data1: MutableLiveData<String> by lazy { MutableLiveData() }
 }
