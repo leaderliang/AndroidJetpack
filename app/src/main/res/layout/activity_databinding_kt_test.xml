@@ -36,17 +36,35 @@
 
 
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{student.classNameF}"
             android:textSize="30sp" />
         />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!--单向绑定   @{student.ageF} -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{student.ageF}"
+            android:textSize="30sp" />
+        />
+
+
+        <!--双向绑定   @={student.classNameF} -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={student.classNameF}"
+            android:textSize="30sp" />
+        />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={student.ageF}"
             android:textSize="30sp" />
         />
 

@@ -30,8 +30,9 @@ class DatabindingTestActivityKt : AppCompatActivity() {
         student.age = "29"
         binding.student = student
 
+        // 不会改变
         Handler().postDelayed({
-            student.className = "liangyuanyuan"
+            student.className = "devliang"
             student.age = "29"
         }, 3000)
 
@@ -39,9 +40,21 @@ class DatabindingTestActivityKt : AppCompatActivity() {
         LoggerUtil.d("name :${student.classNameF.get()}, age: ${student.ageF}")
 
         Handler().postDelayed({
-            student.classNameF.set("liangyq")
-            student.ageF.set("29") 
+            student.classNameF.set("devliang@outlook.com")
+            student.ageF.set("29")
         }, 3000)
+
+
+        student.classNameF.set("三年二班")
+        student.ageF.set("29")
+//        binding.student = student
+        LoggerUtil.d("name :${student.classNameF.get()}, age: ${student.ageF}")
+
+
+
+        Handler().postDelayed({
+            LoggerUtil.d("name :${student.classNameF.get()}, age: ${student.ageF}")
+        }, 5000)
 
 
     }
