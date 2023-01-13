@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 
 /**
  * TODO
- *
+ * SavedStateHandle 用于当在开发者选项中设置，不允许 app 置于后台运行的情况下，保护数据状态不丢失
  * Note:
  * @author dev.liang <a href="mailto:dev.liang@outlook.com">Contact me.</a>
  * @since 2023/01/13 11:50

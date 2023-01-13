@@ -14,6 +14,7 @@ class MyViewModelActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // viewBinding 两种方式
         // 方式一
         /*setContentView(R.layout.activity_my_view_model)
         mBinding = ActivityMyViewModelBinding.bind((findViewById<View>(android.R.id.content) as ViewGroup).getChildAt(0))*/
@@ -23,7 +24,7 @@ class MyViewModelActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         //  实例化 viewModel 的其中两种方式
-//            myViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MyViewModel::class.java)
+        // myViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MyViewModel::class.java)
 
         /*
         by viewModels<MyViewModel>()  这种形式需要在 app 下的 gradle 文件中添加对应配置
