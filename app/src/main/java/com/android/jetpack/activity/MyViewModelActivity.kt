@@ -2,9 +2,14 @@ package com.android.jetpack.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.android.jetpack.databinding.ActivityMyViewModelBinding
+import com.android.jetpack.viewmodel.MyViewModel
+import com.android.jetpack.viewmodel.MyViewModelSavedStateHandle
 
 class MyViewModelActivity : AppCompatActivity() {
+    private lateinit var myViewModel: MyViewModel
     private lateinit var mBinding: ActivityMyViewModelBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,12 +22,28 @@ class MyViewModelActivity : AppCompatActivity() {
         mBinding = ActivityMyViewModelBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+        //  实例化 viewModel 的其中两种方式
+//            myViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MyViewModel::class.java)
+
+        /*
+        by viewModels<MyViewModel>()  这种形式需要在 app 下的 gradle 文件中添加对应配置
+        kotlinOptions{
+            jvmTarget = 1.8
+        }*/
+//        val viewModel by viewModels<MyViewModel>()
+        val viewModel by viewModels<MyViewModelSavedStateHandle>()
+
+        viewModel.publicUserLiveData.observe(this) {
+            mBinding.tvContent.text = it.toString()
+        }
 
 
 
 
 
-        mBinding.tvContent.text = "测试阶段"
+        mBinding.btChange.setOnClickListener {
+            viewModel.btAddNum()
+        }
 
 
     }

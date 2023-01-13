@@ -11,7 +11,6 @@ import com.android.jetpack.livedata.MyLiveData
 import com.android.jetpack.observer.MyObserver
 import com.android.jetpack.observer.Observer_
 import com.android.jetpack.util.LoggerUtil
-import kotlinx.android.synthetic.main.activity_lifecycle.*
 import kotlin.concurrent.thread
 
 class LifecycleActivity : AppCompatActivity() {
@@ -28,12 +27,13 @@ class LifecycleActivity : AppCompatActivity() {
         /*mBinding = ActivityLifecycleBinding.inflate(layoutInflater)
         setContentView(mBinding.root)*/
 
-        setContentView(R.layout.activity_lifecycle)
+
+
         mBinding = ActivityLifecycleBinding.inflate(layoutInflater)
         ActivityLifecycleBinding.bind(mBinding.root)
 
         // import kotlinx.android.synthetic.main.activity_lifecycle.*
-        tv_name.text = "from android extensions"
+        mBinding.tvName.text = "from android extensions"
 
 
 
