@@ -1,4 +1,4 @@
-package com.android.jetpack;
+package com.android.jetpack.viewmodel;
 
 import android.os.SystemClock;
 

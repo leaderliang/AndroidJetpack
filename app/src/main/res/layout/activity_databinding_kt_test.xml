@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".databinding.DatabindingTestActivityKt">
+        tools:context=".activity.DatabindingTestActivityKt">
 
         <TextView
             android:id="@+id/tv_name"
@@ -53,6 +53,7 @@
 
 
         <!--双向绑定   @={student.classNameF} -->
+        <!--@= 表示 view 驱动 model 更新数据-->
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"

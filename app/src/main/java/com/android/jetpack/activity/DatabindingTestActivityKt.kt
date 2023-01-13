@@ -1,10 +1,12 @@
-package com.android.jetpack.databinding
+package com.android.jetpack.activity
 
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.android.jetpack.R
+import com.android.jetpack.databinding.ActivityDatabindingKtTestBinding
+import com.android.jetpack.databinding.Student
 import com.android.jetpack.util.LoggerUtil
 
 /**

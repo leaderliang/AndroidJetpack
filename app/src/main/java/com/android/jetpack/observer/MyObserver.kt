@@ -11,7 +11,7 @@ import com.android.jetpack.util.LoggerUtil
  * @author dev.liang <a href="mailto:dev.liang@outlook.com">Contact me.</a>
  * @since 2022/08/24 15:05
  */
-class MyObserver : DefaultLifecycleObserver {
+class MyObserver : DefaultLifecycleObserver /*FullLifecycleObserver*/ {
 
     fun onResumeListener(): Unit = LoggerUtil.d("onResume ...")
 

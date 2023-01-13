@@ -1,8 +1,11 @@
-package com.android.jetpack
+package com.android.jetpack.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.android.jetpack.R
 import com.android.jetpack.databinding.ActivityLifecycleBinding
 import com.android.jetpack.livedata.MyLiveData
 import com.android.jetpack.observer.MyObserver
@@ -19,8 +22,8 @@ class LifecycleActivity : AppCompatActivity() {
 
         // viewBinding 两种使用方式
         /*setContentView(R.layout.activity_lifecycle)
-        mBinding = ActivityLifecycleBinding.inflate(layoutInflater)
-        ActivityLifecycleBinding.bind(mBinding.root)*/
+        mBinding = ActivityLifecycleBinding.bind((findViewById<View>(android.R.id.content) as ViewGroup).getChildAt(0))
+        */
 
         /*mBinding = ActivityLifecycleBinding.inflate(layoutInflater)
         setContentView(mBinding.root)*/
@@ -35,11 +38,8 @@ class LifecycleActivity : AppCompatActivity() {
 
 
 
-
-
-
-
         lifecycle.addObserver(Observer_())
+        // 观察生命周期变化
         lifecycle.addObserver(MyObserver())
 
 

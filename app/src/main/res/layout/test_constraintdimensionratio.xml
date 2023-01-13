@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--当app:layout_constraintDimensionRatio=“h,2:1” 中写了h的情况下代表高宽比 2 ： 1
+当app:layout_constraintDimensionRatio=“w,1:2” 中写了w的情况下代表宽高比1 ： 2
+
+    -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/tvHello"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@color/teal_200"
+        android:gravity="center"
+        android:text="Hello"
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:text="World"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w,3:1"
+        app:layout_constraintLeft_toRightOf="@+id/tvHello"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/teal_200"
+        android:text="Hello"
+        app:layout_constraintDimensionRatio="h,2:1"
+        app:layout_constraintHorizontal_weight="0.6"
+        app:layout_constraintVertical_weight="0.5" />
+
+
+    <TextView
+        android:id="@+id/tv_left"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/black"
+        android:text="Hello"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_right"
+       />
+
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/teal_700"
+        android:text="Hello"
+        app:layout_constraintDimensionRatio="h,2:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintLeft_toRightOf="@+id/tv_left" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

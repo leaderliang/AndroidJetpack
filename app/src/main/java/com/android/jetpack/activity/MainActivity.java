@@ -1,6 +1,7 @@
-package com.android.jetpack;
+package com.android.jetpack.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -9,15 +10,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.android.jetpack.viewmodel.LiveDataTimerViewModel;
+import com.android.jetpack.R;
+import com.android.jetpack.User;
+import com.android.jetpack.viewmodel.UserModel;
 import com.android.jetpack.observer.MyObserver;
 
 /**
  * 注意：ViewModel 绝不能引用视图、Lifecycle 或可能存储对 Activity 上下文的引用的任何类。
  *
+ * 为什么不能直接实现 FullLifecycleObserver 接口进行使用 ？？？？？
  * @author devliang
  * @hide
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DefaultLifecycleObserver /*,FullLifecycleObserver*/ {
 
     private LiveDataTimerViewModel mLiveDataTimerViewModel;
     private UserModel userModel;
@@ -48,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void testUserModel() {
         userModel = new ViewModelProvider(this).get(UserModel.class);
+
+        //  UserModel extends ViewModel
+        userModel = new ViewModelProvider(this, (ViewModelProvider.Factory) new ViewModelProvider.NewInstanceFactory()).get(UserModel.class);
+
+        //  UserModel extends AndroidViewModel
+        userModel = new ViewModelProvider(getViewModelStore(), (ViewModelProvider.Factory) new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(UserModel.class);
+
         userModel.getUser().observe(this, new Observer<User>() {
             @Override
             public void onChanged(User user) {
