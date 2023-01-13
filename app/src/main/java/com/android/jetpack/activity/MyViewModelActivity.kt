@@ -29,7 +29,9 @@ class MyViewModelActivity : AppCompatActivity() {
         by viewModels<MyViewModel>()  这种形式需要在 app 下的 gradle 文件中添加对应配置
         kotlinOptions{
             jvmTarget = 1.8
-        }*/
+        }
+        并且添加对应依赖      implementation 'androidx.fragment:fragment-ktx:1.3.5'
+        */
 //        val viewModel by viewModels<MyViewModel>()
         val viewModel by viewModels<MyViewModelSavedStateHandle>()
 
